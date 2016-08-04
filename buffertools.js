@@ -15,16 +15,11 @@
 
 var SlowBuffer = require('buffer').SlowBuffer;
 var Buffer = require('buffer').Buffer;
+var buffertools = require('./build/Release/buffertools.node');
 
 // requires node 3.1
 var events = require('events');
 var util = require('util');
-
-try {
-	var buffertools = require('./build/Release/buffertools.node');
-} catch (e) {
-	var buffertools = require('./build/Debug/buffertools.node');
-}
 
 exports.extend = function() {
 	var receivers;
